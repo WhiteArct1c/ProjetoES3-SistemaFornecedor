@@ -1,0 +1,67 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class OrdemServico extends EntidadeDominio{
+    private Long prazo;
+    private Long dtRequisicao;
+    private List<Servico> servicos = new ArrayList<>();
+    private List<Produto> produtos = new ArrayList<>();
+    private List<Fornecedor> fornecedores = new ArrayList<>();
+
+    public OrdemServico(Long prazo, Long dtRequisicao, List<Produto> produtos, List<Servico> servicos, List<Fornecedor> fornecedores) {
+        this.prazo = prazo;
+        this.dtRequisicao = dtRequisicao;
+        this.servicos.addAll(servicos);
+        this.produtos.addAll(produtos);
+        this.fornecedores.addAll(fornecedores);
+    }
+
+    public List<Fornecedor> getFornecedores() {
+        return fornecedores;
+    }
+
+    public void setFornecedores(List<Fornecedor> fornecedores) {
+        this.fornecedores = fornecedores;
+    }
+    
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
+    public List<Servico> getServicos() {
+        return servicos;
+    }
+
+    public void setServicos(List<Servico> servicos) {
+        this.servicos = servicos;
+    }
+
+    public Long getPrazo() {
+        return prazo;
+    }
+
+    public void setPrazo(Long prazo) {
+        this.prazo = prazo;
+    }
+
+    public Long getDtRequisicao() {
+        return dtRequisicao;
+    }
+
+    public void setDtRequisicao(Long dtRequisicao) {
+        this.dtRequisicao = dtRequisicao;
+    }
+
+    @Override
+    public String toString() {
+        return "OrdemServico{" + "prazo=" + prazo + ", dtRequisicao=" + dtRequisicao + 
+                ", servicos=" + servicos + ", produtos=" + produtos + 
+                ", fornecedores=" + fornecedores + '}';
+    }
+}

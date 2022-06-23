@@ -1,0 +1,14 @@
+package rns.impl;
+
+import model.EntidadeDominio;
+import rns.IStrategy;
+
+public class ValidaDadosProduto implements IStrategy {
+
+	@Override
+	public String processar(EntidadeDominio entidade) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

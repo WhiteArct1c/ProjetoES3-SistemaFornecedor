@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="daodb.impl.UsuarioDAO"/>
+    <fullyQualifiedTypeName name="daodb.IDAO"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="controller.impl.Fachada"/>
+    <fullyQualifiedTypeName name="controller.IFachada"/>
+    <fullyQualifiedTypeName name="controller.web.AbstractCommand"/>
+    <fullyQualifiedTypeName name="model.EntidadeDominio"/>
+    <fullyQualifiedTypeName name="controller.web.ServicoVH"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="controller.web.ICommand"/>
+    <fullyQualifiedTypeName name="controller.web.IViewHelper"/>
+    <fullyQualifiedTypeName name="rns.impl.ValidaDadosServico"/>
+    <fullyQualifiedTypeName name="org.eclipse.jdt.internal.compiler.env.ISourceType"/>
+    <fullyQualifiedTypeName name="rns.IStrategy"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="model.Servico"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="rns.impl.ValidaDadosProduto"/>
+    <fullyQualifiedTypeName name="model.Produto"/>
+    <fullyQualifiedTypeName name="model.Resultado"/>
+    <fullyQualifiedTypeName name="rns.impl.ValidaDadosFornecedor"/>
+    <fullyQualifiedTypeName name="rns.impl.ValidaCNPJ"/>
+    <fullyQualifiedTypeName name="model.Fornecedor"/>
+</qualifiedTypeNameHistroy>

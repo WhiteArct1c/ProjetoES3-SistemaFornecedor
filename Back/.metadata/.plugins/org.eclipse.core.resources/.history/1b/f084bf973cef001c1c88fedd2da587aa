@@ -1,0 +1,21 @@
+package controller.impl;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import daodb.IDAO;
+import rns.IStrategy;
+
+public class Fachada {
+	private Map<String, IDAO> daos = new HashMap<String, IDAO>();
+	private Map<String, List<IStrategy>> rns = new HashMap<String, List<IStrategy>>();
+	
+	
+	public Fachada() {
+		List<String> classes = new ArrayList<>();
+		
+		
+	}
+}

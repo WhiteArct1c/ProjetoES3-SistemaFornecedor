@@ -1,0 +1,114 @@
+
+package daodb.impl;
+
+import daodb.IDAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import model.EntidadeDominio;
+import model.Servico;
+
+public class ServicoDAO implements IDAO{
+	
+	private Connection connection = null;
+
+    @Override
+    public void salvar(EntidadeDominio entidade) {
+    	
+    	Servico servico = (Servico) entidade;
+    	PreparedStatement pst = null;
+    	
+    	try {
+
+    		connection = Conexao.getConnectionPostgres();
+    		connection.setAutoCommit(false);
+    		
+    		StringBuilder sql = new StringBuilder();
+    		sql.append("INSERT INTO projetoes3.\"Servico\"(svc_nome, svc_descricao, svc_preco) VALUES (?,?,?)");
+    		
+    		
+    		pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
+    		
+    		
+    		pst.setString(1, servico.getNome());
+    		pst.setString(2, servico.getDescricao());
+    		pst.setDouble(3, servico.getPreco());
+    		
+    		pst.executeUpdate();
+    		
+    		/*
+    		ResultSet rs = pst.getGeneratedKeys();
+    		int idServico = 0;
+    		
+    		
+    		if(rs.next())
+    				idServico = rs.getInt(1);
+    		
+    		servico.setId(idServico);
+    		*/
+    		
+    		connection.commit();
+    		
+    	}catch(Exception e) {
+    		
+    		try {
+    			connection.rollback();
+    		}catch(Exception error) {
+    			error.printStackTrace();
+    		}
+    		
+    		e.printStackTrace();
+    	}finally{
+    		
+    		try {
+    			connection.close();
+    			pst.close();
+    		}catch(SQLException e) {
+    			e.printStackTrace();
+    		}
+    	}
+    	
+    	
+    }
+
+    @Override
+    public void alterar(EntidadeDominio entidade) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void excluir(EntidadeDominio entidade) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    
+    public List<Servico> consultar(){
+    	Servico servico = new Servico();
+    	List<Servico> servicos = new ArrayList<>();
+    	PreparedStatement pst = null;
+    	
+    	try {
+    		
+    		StringBuilder sql = new StringBuilder();
+    		sql.append("SELECT * FROM projetoes3.\"Servico\"");
+    		
+    		pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
+    		
+    		ResultSet rs = pst.executeQuery();
+    		
+    		while(rs.next()) {
+    			
+    		}
+    		
+		} catch (Exception e) {
+			
+		}
+    }
+
+    
+}

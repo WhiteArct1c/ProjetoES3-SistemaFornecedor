@@ -1,0 +1,13 @@
+package controller.web;
+
+import model.EntidadeDominio;
+
+public abstract class AbstractCommand implements ICommand {
+
+	@Override
+	public Object executar(EntidadeDominio entidade) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

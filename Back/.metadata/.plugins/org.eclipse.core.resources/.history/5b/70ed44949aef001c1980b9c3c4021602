@@ -1,0 +1,11 @@
+package daodb.impl;
+
+import daodb.IDAO;
+import java.util.List;
+import model.EntidadeDominio;
+
+public class TelefoneDAO implements IDAO{
+
+
+    
+}

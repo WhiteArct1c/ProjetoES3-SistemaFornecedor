@@ -1,0 +1,52 @@
+package controller.web;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import model.EntidadeDominio;
+import controller.web.*;
+
+public class ControllerServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	private Map<String, IViewHelper> vhs = new HashMap<String, IViewHelper>();
+	private Map<String, ICommand> cmds = new HashMap<String, ICommand>();
+
+    public ControllerServlet() {
+
+    	vhs.put("/projetoWebEs3/SalvarServico", new ServicoVH());
+    	
+    	
+    	cmds.put("Salvar", new SalvarCommand());
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		processRequest(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		processRequest(request, response);
+	}
+	
+	private void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
+				
+		String uri = request.getRequestURI();
+		String operacao = request.getParameter("operacao");
+		
+		IViewHelper vh = vhs.get(uri);	
+		EntidadeDominio entidade = vh.getEntidade(request);
+		ICommand cmd = cmds.get(operacao);
+		Object msg = cmd.executar(entidade);
+		
+		vh.setEntidade(response, request, msg);
+		
+	}
+}

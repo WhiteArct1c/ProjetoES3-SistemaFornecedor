@@ -1,0 +1,5 @@
+package daodb.impl;
+
+public class Conexao {
+	
+}

@@ -1,0 +1,69 @@
+
+package daodb.impl;
+
+import daodb.IDAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.util.List;
+import model.EntidadeDominio;
+import model.Produto;
+
+
+public class ProdutoDAO implements IDAO{
+	
+	private Connection connection = null;
+
+	@Override
+	public String salvar(EntidadeDominio entidade) {
+		
+		Produto produto = (Produto) entidade;
+    	PreparedStatement pst = null;
+    	
+    	try {
+    		connection = Conexao.getConnectionPostgres();
+    		connection.setAutoCommit(false);
+    		
+    		StringBuilder sql = new StringBuilder();
+    		sql.append("INSERT INTO projetoes3.\"Produto\"(prd_nome, prd_categoria, prd_tpUnidade, prd_preco) VALUES (?,?,?,?)");
+    		
+    		
+    		pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
+    		
+    		
+    		pst.setString(1, produto.getNome());
+    		pst.setString(2, produto.getCategoria());
+    		pst.setString(3, produto.getTipoUnidade());
+    		pst.setDouble(4, produto.getPreco());
+    		
+    		pst.executeUpdate();
+    		
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+    	
+		
+		return null;
+	}
+
+	@Override
+	public String alterar(EntidadeDominio entidade) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String excluir(EntidadeDominio entidade) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <T extends EntidadeDominio> List<T> consultar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+}

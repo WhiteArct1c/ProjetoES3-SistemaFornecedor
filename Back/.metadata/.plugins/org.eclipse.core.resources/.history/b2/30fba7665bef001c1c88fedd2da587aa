@@ -1,0 +1,14 @@
+
+package controller.web;
+
+import model.EntidadeDominio;
+
+public class SalvarCMD implements ICommand {
+
+    @Override
+    public Object executar(EntidadeDominio entidade) {
+        return null
+    }
+
+    
+}
