@@ -187,15 +187,15 @@
               				</td>
               				<td>
               					<input class="form-control mt-2" type="text" id="cnpjFornecedor"
-              						name="nomeServico" value="<%=fornecedor.getCnpj()%>" required="true" min="1"/>
+              						name="cnpjFornecedor" value="<%=fornecedor.getCnpj()%>" required="true" min="1"/>
               				</td>
               				<td>
               					<input class="form-control mt-2" type="text" id="razaosocialFornecedor"
-              						name="descricaoServico" value="<%=fornecedor.getRazaoSocial()%>" required="true" min="1"/>
+              						name="razaosocialFornecedor" value="<%=fornecedor.getRazaoSocial()%>" required="true" min="1"/>
               				</td>
               				<td>
               					<input class="form-control mt-2" type="text" id="emailFornecedor"
-              						name="precoServico" value="<%=fornecedor.getEmail()%>" required="true" min="1"/>
+              						name="emailFornecedor" value="<%=fornecedor.getEmail()%>" required="true" min="1"/>
               				</td>              
               				<td>
               					<input type="hidden" name="acao" value="Alterar"/>
@@ -250,7 +250,7 @@
                         	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                         	
                         	<input type="hidden" name="acao" value="Salvar"/>
-                        	<input type="hidden" name="viewHelper" value="Fornecedor222VH"/>
+                        	<input type="hidden" name="viewHelper" value="FornecedorVH"/>
                         	<button type="submit" class="btn btn-primary">Cadastrar!</button>
                         	 
                     	</div>

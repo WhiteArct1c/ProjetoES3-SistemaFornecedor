@@ -26,8 +26,8 @@ public class FornecedorVH implements IViewHelper{
 
 	@Override
 	public void setEntidade(HttpServletResponse response, HttpServletRequest request, Object msg) throws IOException {
-		response.sendRedirect(request.getContextPath() + "/CarregarFornecedor");
-		//Object msg, que na verdade será do tipo Resultado, ainda não foi implementado para retornar ao front.
+		response.sendRedirect(request.getContextPath() + "/CarregarFornecedores");
+		//Object msg, que na verdade será do tipo Resultado (retorno), ainda não foi implementado para retornar ao front.
 	}
     
 }

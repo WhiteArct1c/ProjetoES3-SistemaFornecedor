@@ -31,5 +31,6 @@
     <fullyQualifiedTypeName name="model.Resultado"/>
     <fullyQualifiedTypeName name="rns.impl.ValidaDadosFornecedor"/>
     <fullyQualifiedTypeName name="rns.impl.ValidaCNPJ"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
     <fullyQualifiedTypeName name="model.Fornecedor"/>
 </qualifiedTypeNameHistroy>

@@ -1,8 +1,2 @@
 INDEX VERSION 1.4+C:\Users\Matheus\Desktop\Projeto ES3 - Sistema de Fornecedor\Back\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-341268628.index
 4108069536.index
-2112759727.index
-1900971098.index
-3627570629.index
-3981126224.index
-2606244424.index

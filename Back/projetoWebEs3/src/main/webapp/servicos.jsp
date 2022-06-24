@@ -187,15 +187,15 @@
               				</td>
               				<td>
               					<input class="form-control mt-2" type="text" id="nomeServico"
-              						name="nomeServico" value="<%=servico.getNome()%>" required="true" min="1"/>
+              						name="nomeServico" value="<%=servico.getNome()%>"/>
               				</td>
               				<td>
               					<input class="form-control mt-2" type="text" id="descricaoServico"
-              						name="descricaoServico" value="<%=servico.getDescricao()%>" required="true" min="1"/>
+              						name="descricaoServico" value="<%=servico.getDescricao()%>"/>
               				</td>
               				<td>
               					<input class="form-control mt-2" type="text" id="precoServico"
-              						name="precoServico" value="<%=servico.getPreco()%>" required="true" min="1"/>
+              						name="precoServico" value="<%=servico.getPreco()%>"/>
               				</td>              
               				<td>
               					<input type="hidden" name="acao" value="Alterar"/>

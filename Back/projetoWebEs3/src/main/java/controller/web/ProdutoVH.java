@@ -31,7 +31,7 @@ public class ProdutoVH implements IViewHelper {
 	@Override
 	public void setEntidade(HttpServletResponse response, HttpServletRequest request, Object msg) throws IOException {
 		response.sendRedirect(request.getContextPath() + "/CarregarProdutos");
-		
+		//Object msg, que na verdade será do tipo Resultado (retorno), ainda não foi implementado para retornar ao front.
 	}
 
 }

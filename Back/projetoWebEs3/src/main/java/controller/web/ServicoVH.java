@@ -32,6 +32,7 @@ public class ServicoVH implements IViewHelper {
 	@Override
 	public void setEntidade(HttpServletResponse response, HttpServletRequest request, Object msg) throws IOException {		
 		response.sendRedirect(request.getContextPath() + "/CarregarServicos");
+		//Object msg, que na verdade será do tipo Resultado (retorno), ainda não foi implementado para retornar ao front.
 	}
 
 }
