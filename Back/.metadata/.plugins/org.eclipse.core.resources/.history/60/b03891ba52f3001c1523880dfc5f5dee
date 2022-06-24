@@ -19,7 +19,7 @@
             <div class="row justify-content-center mt-5 text-white">
                 <section class="col-md-3 mt-5">
                     <img src="<%=request.getContextPath()%>/resources/images/spl-logotipo-vertical.png"  class="mx-auto d-block img-fluid" width="390" height="200">
-                    <form class="form-container" action="index.jsp">
+                    <form class="form-container" action="CarregarServicos">
                     	<!-- login funcional não implementado -->
                         <h4 class="h3 text-center">Login</h4>
                         <hr>
