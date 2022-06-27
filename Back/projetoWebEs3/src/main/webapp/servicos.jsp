@@ -170,10 +170,10 @@
 			<table class="table">
             <thead>
               <tr>
-                <th scope="col" class="text-center">Código</th>
-                <th scope="col" class="text-center">Nome</th>
+                <th scope="col" class="text-center">Código do Serviço</th>
                 <th scope="col" class="text-center">Descrição</th>
                 <th scope="col" class="text-center">Preço</th>
+                <th scope="col" class="text-center">Início do Serviço</th>
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -182,12 +182,9 @@
               		for(Servico servico: servicos){%>
               		<form action="controller" method=post>
               			<tr>
-              				<td class="text-center fw-semibold fs-5 align-middle">
-              					<%=servico.getId()%>
-              				</td>
               				<td>
-              					<input class="form-control mt-2" type="text" id="nomeServico"
-              						name="nomeServico" value="<%=servico.getNome()%>"/>
+              					<input class="form-control mt-2" type="text" id="codigoServico"
+              						name="nomeServico" value="<%=servico.getCodigo()%>"/>
               				</td>
               				<td>
               					<input class="form-control mt-2" type="text" id="descricaoServico"
@@ -196,7 +193,11 @@
               				<td>
               					<input class="form-control mt-2" type="text" id="precoServico"
               						name="precoServico" value="<%=servico.getPreco()%>"/>
-              				</td>              
+              				</td>
+              				<td>
+              					<input class="form-control mt-2" type="date" id="dtinicioServico"
+              						name="dtinicioServico" value="<%=servico.getDataInicio()%>"/> 
+              				</td>        
               				<td>
               					<input type="hidden" name="acao" value="Alterar"/>
               					<input type="hidden" name="idServico" value="<%=servico.getId()%>"/>
@@ -231,18 +232,22 @@
                     <form class="needs-validation" action="controller" method="post">
                     	<div class="modal-body">
 							<div class="mb-3">
-								<label for="nomeServico" class="form-label">Nome do Serviço</label> 
-								<input type="text" class="form-control" id="nomeServico" name="nomeServico" required>
+								<label for="codigoServico" class="form-label">Código do Serviço</label> 
+								<input type="text" class="form-control" id="codigoServico" name="codigoServico" required>
 							</div>
 							<div class="mb-3">
 								<div class="mb-3">
   									<label for="descricaoServico" class="form-label">Descrição</label>
-  									<textarea class="form-control" id="descricaoServico" rows="3" name="descricaoServico"></textarea>
+  									<input type="text" class="form-control" id="descricaoServico" name="descricaoServico" required/>
 								</div>
 							</div>
 							<div class="mb-3">
 								<label for="precoServico" class="form-label">Preço</label> 
-								<input type="text" class="form-control" id="precoServico" name="precoServico">
+								<input type="text" class="form-control" id="precoServico" name="precoServico" required>
+							</div>
+							<div class="mb-3">
+								<label for="dtinicioServico" class="form-label">Início do serviço</label> 
+								<input type="date" class="form-control" id="dtinicioServico" name="dtinicioServico" required>
 							</div>
 						
 						</div>

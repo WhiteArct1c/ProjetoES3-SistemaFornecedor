@@ -8,12 +8,13 @@ public class ValidaDadosServico implements IStrategy{
 
     @Override
     public String processar(EntidadeDominio entidade) {
-        Servico servico = (Servico)entidade;
+        
+    	Servico servico = (Servico)entidade;
         
         StringBuilder sb = new StringBuilder();
         
-        if(servico.getNome() == null || servico.getNome().isBlank()){
-        	sb.append("É obrigatório cadastrar o nome do serviço!\n");
+        if(servico.getDescricao() == null || servico.getDescricao().isBlank()){
+        	sb.append("É obrigatório cadastrar a descrição do serviço!\n");
         }
         
         if(servico.getPreco() <= 0){

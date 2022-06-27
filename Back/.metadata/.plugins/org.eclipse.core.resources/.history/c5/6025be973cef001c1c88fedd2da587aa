@@ -1,9 +1,0 @@
-
-package rns;
-
-import model.EntidadeDominio;
-
-public interface IStrategy {
-    
-    public void processar(EntidadeDominio entidade);
-}

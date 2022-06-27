@@ -1,0 +1,93 @@
+
+package model;
+
+public class Servico extends EntidadeDominio{
+    private String codigo;
+    private String descricao;
+    private double preco;
+    private long dataInicio;
+    private Fornecedor fornecedor; 
+
+	public Servico(String codigo, String descricao, double preco, long dataInicio, Fornecedor fornecedor) {
+		super();
+		this.codigo = codigo;
+		this.descricao = descricao;
+		this.preco = preco;
+		this.dataInicio = dataInicio;
+		this.fornecedor = fornecedor;
+	}
+    
+    
+	public Servico(int id, String codigo, String descricao, double preco, long dataInicio, Fornecedor fornecedor) {
+		this.id = id;
+		this.codigo = codigo;
+		this.descricao = descricao;
+		this.preco = preco;
+		this.dataInicio = dataInicio;
+		this.fornecedor = fornecedor;
+	}
+
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+
+
+	public double getPreco() {
+		return preco;
+	}
+
+
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
+
+
+	public long getDataInicio() {
+		return dataInicio;
+	}
+
+
+
+	public void setDataInicio(long dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+
+
+
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+
+
+
+    
+
+}

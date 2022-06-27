@@ -57,7 +57,7 @@ public class Fachada implements IFachada{
 		
 		for(IStrategy s: regras) {
 			String msg = s.processar(entidade);
-			if(msg != null && !msg.isBlank()){
+			if(msg != null && !msg.isBlank() && !msg.isEmpty()){
 				sb.append(msg);
 				sb.append("\n");
 			}

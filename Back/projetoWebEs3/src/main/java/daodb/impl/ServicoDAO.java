@@ -4,6 +4,7 @@ package daodb.impl;
 import daodb.IDAO;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,15 +30,16 @@ public class ServicoDAO implements IDAO{
     		connection.setAutoCommit(false);
     		
     		StringBuilder sql = new StringBuilder();
-    		sql.append("INSERT INTO projetoes3.\"Servico\"(svc_nome, svc_descricao, svc_preco) VALUES (?,?,?)");
+    		sql.append("INSERT INTO projetoes3.\"Servico\"(svc_codigo, svc_descricao, svc_preco, svc_dtinicio) VALUES (?,?,?,?)");
     		
     		
     		pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
     		
     		
-    		pst.setString(1, servico.getNome());
+    		pst.setString(1, servico.getCodigo());
     		pst.setString(2, servico.getDescricao());
     		pst.setDouble(3, servico.getPreco());
+    		pst.setDate(4, (Date)servico.getDataInicio());// TODO: arrumar erro de conversão
     		
     		pst.executeUpdate();
     		
@@ -89,14 +91,15 @@ public class ServicoDAO implements IDAO{
         	connection.setAutoCommit(false);
         	
         	StringBuilder sql = new StringBuilder();
-        	sql.append("UPDATE projetoes3.\"Servico\" SET svc_nome = ?, svc_descricao = ?, svc_preco = ? WHERE (svc_id = ?)");
+        	sql.append("UPDATE projetoes3.\"Servico\" SET svc_codigo = ?, svc_descricao = ?, svc_preco = ?, svc_dtinicio = ? WHERE (svc_id = ?)");
         	
         	pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
         	
-        	pst.setString(1, servico.getNome());
+        	pst.setString(1, servico.getCodigo());
         	pst.setString(2, servico.getDescricao());
         	pst.setDouble(3, servico.getPreco());
-        	pst.setInt(4, servico.getId());
+        	pst.setDate(4, (Date)servico.getDataInicio());
+        	pst.setInt(5, servico.getId());
         	
         	pst.executeUpdate();
         	
@@ -181,8 +184,8 @@ public class ServicoDAO implements IDAO{
     		ResultSet rs = pst.executeQuery();
     		
     		while(rs.next()) {
-    			servico = new Servico(rs.getInt("svc_id"), rs.getString("svc_nome"), rs.getString("svc_descricao"),
-    					rs.getDouble("svc_preco"));
+    			servico = new Servico(rs.getInt("svc_id"), rs.getString("svc_codigo"), rs.getString("svc_descricao"),
+    					rs.getDouble("svc_preco"), rs.getDate("svc_dtinicio"));
     			
     			servicos.add(servico);
     		}
